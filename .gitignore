@@ -1,0 +1,34 @@
+# ОС
+.DS_Store
+Thumbs.db
+
+# Логи
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Зависимости
+node_modules/
+vendor/
+
+# Сборка
+dist/
+build/
+out/
+
+# Среды
+.env
+.env.local
+.env.*.local
+
+# IDE / редакторы
+.idea/
+.vscode/
+*.swp
+
+# Кэш
+*.pyc
+__pycache__/
+.cache/
