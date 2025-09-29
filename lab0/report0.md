@@ -37,7 +37,7 @@ Date of create: 29.09.2025
    - Создан коммит:  
    - Изменения отправлены в удалённый репозиторий
 
-   ![История изменений](./screenshots/ssh-GitHubDesktop_w0BB8NCwXv.png)  
+   ![История изменений](./screenshots/GitHubDesktop_yPPeOwVmep.png)  
 
 9. **Pull Request**  
    - В GitHub создан Pull Request из ветки `develop` в `main` с описанием изменений.  
