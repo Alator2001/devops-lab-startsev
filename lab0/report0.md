@@ -29,7 +29,7 @@ Date of create: 29.09.2025
 6. **Работа с веткой develop**  
    - Создана новая ветка develop
 
-   ![Новая ветка](./lab0/screenshots/GitHubDesktop_w0BB8NCwXv.png)
+   ![Новая ветка](./screenshots/GitHubDesktop_w0BB8NCwXv.png)
 
 7. **Файл CONTRIBUTING.md**  
    - Подготовлен файл с правилами участия
@@ -37,7 +37,7 @@ Date of create: 29.09.2025
    - Создан коммит:  
    - Изменения отправлены в удалённый репозиторий
 
-   ![История изменений](./lab0/screenshots/ssh-GitHubDesktop_w0BB8NCwXv.png)  
+   ![История изменений](./screenshots/ssh-GitHubDesktop_w0BB8NCwXv.png)  
 
 9. **Pull Request**  
    - В GitHub создан Pull Request из ветки `develop` в `main` с описанием изменений.  
@@ -46,4 +46,4 @@ Date of create: 29.09.2025
     - Pull Request принят и смержен.  
     - Ветка `develop` удалена через интерфейс GitHub.  
 
-    ![merge](./lab0/screenshots/browser_9e9nslhFmQ.png)
+    ![merge](./screenshots/browser_9e9nslhFmQ.png)
