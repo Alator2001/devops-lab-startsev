@@ -4,7 +4,7 @@ Course: Introduction in Web Technologies
 Year: 2025/2026  
 Group: U4225  
 Author: Startsev Daniil Vitalevich  
-Lab: Lab 2 — Continuous Integration / Continuous Delivery  
+Lab: Lab 2 — CI/CD для Docker приложения
 Date of create: 07.10.2025  
 
 ---
