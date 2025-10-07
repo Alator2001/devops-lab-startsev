@@ -23,8 +23,11 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v6
         with:
+          context: ./lab2/my-flask-app
+          file: ./lab2/my-flask-app/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/my-flask-app:latest
+
 
       - name: Deploy (echo only)
         run: echo "Deploying to production server..."
