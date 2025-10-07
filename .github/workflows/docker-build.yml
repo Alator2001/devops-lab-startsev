@@ -4,6 +4,9 @@ on:
   push:
     branches: [main, develop]
 
+env:
+  IMAGE_NAME: my-flask-app
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -20,22 +23,32 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and Push (branch-specific tags)
+      # Готовим теги и канал по ветке
+      - name: Resolve tags and channel
+        id: meta
+        run: |
+          IMAGE="${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}"
+          SHORT_SHA="${GITHUB_SHA::7}"
+          if [ "${GITHUB_REF_NAME}" = "main" ]; then
+            echo "tags=${IMAGE}:latest,${IMAGE}:sha-${SHORT_SHA}" >> "$GITHUB_OUTPUT"
+            echo "channel=production" >> "$GITHUB_OUTPUT"
+          else
+            echo "tags=${IMAGE}:dev,${IMAGE}:sha-${SHORT_SHA}" >> "$GITHUB_OUTPUT"
+            echo "channel=development" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build & Push
         uses: docker/build-push-action@v6
         with:
           context: ./lab2/my-flask-app
           file: ./lab2/my-flask-app/Dockerfile
           push: true
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/my-flask-app:${{ github.ref_name == 'main' && 'latest' || 'dev' }}
-            ${{ secrets.DOCKER_USERNAME }}/my-flask-app:sha-${{ github.sha.substr(0,7) }}
+          tags: ${{ steps.meta.outputs.tags }}
 
-      # Deploy для production (main)
-      - name: Deploy to PROD
-        if: github.ref == 'refs/heads/main'
-        run: echo "Deploying to production server..."
-
-      # Deploy для development (develop)
-      - name: Deploy to DEV
-        if: github.ref == 'refs/heads/develop'
-        run: echo "Deploying to development server..."
+      - name: Deploy (echo only)
+        run: |
+          if [ "${{ steps.meta.outputs.channel }}" = "production" ]; then
+            echo "Deploying to production server..."
+          else
+            echo "Deploying to development server..."
+          fi
