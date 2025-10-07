@@ -30,13 +30,12 @@ jobs:
             ${{ secrets.DOCKER_USERNAME }}/my-flask-app:${{ github.ref_name == 'main' && 'latest' || 'dev' }}
             ${{ secrets.DOCKER_USERNAME }}/my-flask-app:sha-${{ github.sha.substr(0,7) }}
 
-      # Условный деплой — production (main)
+      # Deploy для production (main)
       - name: Deploy to PROD
         if: github.ref == 'refs/heads/main'
         run: echo "Deploying to production server..."
 
-      # Условный деплой — development (develop)
+      # Deploy для development (develop)
       - name: Deploy to DEV
         if: github.ref == 'refs/heads/develop'
         run: echo "Deploying to development server..."
-
