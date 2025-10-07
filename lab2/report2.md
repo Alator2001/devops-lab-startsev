@@ -52,6 +52,7 @@ Date of create: 07.10.2025
 
 ---
 
+## Шаг 4. Тестирование пайплайна  (со звёздочкой)
 - При пуше в ветку `develop` в GitHub Actions выполнились все шаги, в логах отобразилось сообщение  
   *“Deploying to development server...”*.  
 ![Dev log](img/com_dev.png)
