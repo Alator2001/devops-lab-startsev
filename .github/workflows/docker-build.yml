@@ -20,14 +20,22 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and Push
+      - name: Build and Push (branch-specific tags)
         uses: docker/build-push-action@v6
         with:
           context: ./lab2/my-flask-app
           file: ./lab2/my-flask-app/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/my-flask-app:latest
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/my-flask-app:${{ github.ref_name == 'main' && 'latest' || 'dev' }}
+            ${{ secrets.DOCKER_USERNAME }}/my-flask-app:sha-${{ github.sha.substr(0,7) }}
 
-
-      - name: Deploy (echo only)
+      # Deploy для production (main)
+      - name: Deploy to PROD
+        if: github.ref == 'refs/heads/main'
         run: echo "Deploying to production server..."
+
+      # Deploy для development (develop)
+      - name: Deploy to DEV
+        if: github.ref == 'refs/heads/develop'
+        run: echo "Deploying to development server..."
