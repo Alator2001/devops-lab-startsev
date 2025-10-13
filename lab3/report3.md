@@ -19,8 +19,8 @@
 - затем прогнал перебор директорий через ffuf с Seclists (common/medium) 
 - в результате выявлены стандартные WP-пути (robots.txt, sitemap.xml, wp-admin, wp-content), .htaccess отвечает 403
 
-![curl](curl.png)
+![curl](img/curl.png)
 ---
-![curl попытки обхода](curl попытки обхода.png)
+![curl попытки обхода](img/curl попытки обхода.png)
 ---
-![Поиск директорий](Поиск директорий.png)
+![Поиск директорий](img/Поиск директорий.png)
