@@ -37,7 +37,7 @@ Date of create: 13.10.2025
 
 # Отчёт по тестированию — delta-platform.ru
 
----
+
 
 ## Область и ограничения
 - Цель: https://delta-platform.ru  
