@@ -22,12 +22,12 @@ Date of create: 13.10.2025
 
 ### Шаг 2. Запуск Node Exporter:
 
-![Запуск_Node_Exporter](img/Запуск_Node_Exporter.png)
+![Запуск_Node_Exporter](img/Запуск_Node Exporter.png)
 
 ### Шаг 3. Запуск Grafana и создание Dashboard
  Создал Dashboard и добавил необходимые метрики.
 
- ![Prometheus](img/Запуск_Prometheus_2png)
+ ![Prometheus](img/Запуск_Prometheus_2.png)
  ---
  ![Метрики_Grafana](img/Grafana_метрики.png)
 
