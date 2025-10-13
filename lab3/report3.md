@@ -16,6 +16,7 @@ Date of create: 13.10.2025
 
 ### Шаг 1. Создание конфигурации и запуск Prometheus:
 Запуск Prometheus
+
 ![Prometheus_log](img/Запуск_Prometheus_log.png)
  ---
 ![Prometheus](img/Запуск_Prometheus.png)
