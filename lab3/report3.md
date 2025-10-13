@@ -27,6 +27,7 @@ Date of create: 13.10.2025
  Создал Dashboard и добавил необходимые метрики.
 
  ![Prometheus](img/Запуск_Prometheus_2png)
+ ---
  ![Метрики_Grafana](img/Grafana_метрики.png)
 
 
